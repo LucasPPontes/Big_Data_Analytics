@@ -58,6 +58,64 @@ rdata
 
 
 # Fatores Não ordenados
+set1 <- c("AA", "B", "BA", "CC", "CA", "AA", "BA", "CC", "CC")
+set1
+
+# Transformando os dados
 # R apenas criou os níveis, oq ue não significa que exista uma hierarquia
+f.set1 <- factor(set1)
 f.set1
+class(f.set1)
+is.ordered(f.set1)
+
+# Fatores Ordenados
+o.set1 <- factor(
+  set1,
+  levels = c("CA", "BA", "AA", "CC", "B"),
+  ordered = TRUE
+)
+o.set1
+
+is.ordered(o.set1)
+
+as.numeric(o.set1)
+table(o.set1)
+
+# Fatores e Dataframes
+df <- read.csv2("etnias.csv", sep = ',')
+View(df)
+
+# Tipos das variáveis no dataframe
+str(df)
+?str
+
+# Variável original (antes da transformação)
+levels(df$Etnia)
+summary(df$Etnia)
+
+# Níveis dos fatores
+# Internamente, o R armazena valores inteiros e faz um mapeamento para as strings em ordem alfabética
+# e agrupa as estatísticas por níveis. Agora, se fizermos sumarização de estatísticas, é possível visualizar 
+# a contabilização para cada categoria
+df$Etnia <- as.factor(df$Etnia)
+levels(df$Etnia)
+summary(df$Etnia)
+
+
+# Plot
+# Agora se fizermos um plot, temos um boxplot para estas variáveis categóricas
+boxplot(df$Idade ~ df$Etnia, xlab = "Etnia", ylab = "Idade", main = "Idade por Etnia")
+
+# Regressão
+summary(lm(Idade ~ Etnia, data = df))
+
+# Convertendo uma coluna em variável categórica. Isso criará um fator não-ordenado
+df
+str(df)
+df$Estado_Civil <- factor(df$Estado_Civil, labels = c("Solteiro", "Casado", "Divorciado"))
+df
+str(df)
+
+
+
 

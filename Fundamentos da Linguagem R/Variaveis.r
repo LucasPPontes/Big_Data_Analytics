@@ -7,6 +7,7 @@ getwd()
 var1 = 100
 var1
 
+
 mode(var1)
 help("mode")
 sqrt(var1)

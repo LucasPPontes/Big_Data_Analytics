@@ -17,8 +17,10 @@ sessionInfo()
 print("Mensagem impressa")
 
 # Criar gráficos
+
 plot(1:25)
-plot(25:1)
+plot(25:2)
+
 
 # Instalar pacotes 
 install.packages("randomForest")
