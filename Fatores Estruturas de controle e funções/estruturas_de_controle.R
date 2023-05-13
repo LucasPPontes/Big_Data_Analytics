@@ -92,9 +92,30 @@ repeat {
   }
 }
 
+# Loop for
+for(i in 1:20){
+  print(i)
+}
 
+for(q in rnorm(10)){
+  print(q)
+}
 
+# Ignora alguns elementos dentrodo loop
+for(i in 1:22){
+  if(i == 13 | i == 15){
+    next
+  }
+  print(i)
+}
 
+# Interromper o loop
+for(i in 1:22){
+  if(i == 13){
+    break
+  }
+  print(i)
+}
 
 
 
