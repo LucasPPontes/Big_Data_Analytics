@@ -93,6 +93,12 @@ repeat {
 }
 
 # Loop for
+vetor <- c(1:50)
+for(i in vetor){
+  print(i)
+}
+
+
 for(i in 1:20){
   print(i)
 }
@@ -115,6 +121,20 @@ for(i in 1:22){
     break
   }
   print(i)
+}
+
+# Loop while
+x = 1
+while(x < 5){
+ x = x + 1
+  print(x)
+}
+
+# o loop while não sera executado
+y = 6
+while(y < 5){
+  y = y+10
+  print(y)
 }
 
 
